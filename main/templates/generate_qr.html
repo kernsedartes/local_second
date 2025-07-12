@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Генерация QR-кода</title>
+</head>
+<body>
+    <h1>Создать QR для товара</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Создать QR</button>
+    </form>
+
+    {% if qr_url %}
+        <h2>QR-код:</h2>
+        <img src="{{ qr_url }}" alt="QR Code">
+        <p>Ссылка: <a href="{{ secret_url }}" target="_blank">{{ secret_url }}</a></p>
+    {% endif %}
+
+    <p><a href="{% url 'homepage' %}">На главную</a></p>
+</body>
+</html>

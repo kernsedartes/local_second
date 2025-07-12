@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ product.name }}</title>
+</head>
+<body>
+    <h1>{{ product.name }}</h1>
+
+    {% if product.image_base64 %}
+        <img src="data:image/png;base64,{{ product.image_base64 }}" alt="{{ product.name }}" style="max-width:700px;">
+    {% else %}
+        <p>Нет изображения</p>
+    {% endif %}
+
+    <p><strong>Описание:</strong> {{ product.description|linebreaks }}</p>
+    <p><strong>Цена:</strong> {{ product.price }} {{ product.currency }}</p>
+
+</body>
+</html>

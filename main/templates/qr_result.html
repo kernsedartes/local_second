@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>QR-код с ссылкой на товар</title>
+</head>
+<body>
+    <h1>QR-код для товара ID {{ product_id }}</h1>
+
+    <p>Ссылка: <a href="{{ link }}" target="_blank">{{ link }}</a></p>
+    <img src="{{ qr_url }}" alt="QR Code">
+
+    <p><a href="{% url 'generate_qr' %}">Сгенерировать еще</a></p>
+    <p><a href="{% url 'homepage' %}">На главную</a></p>
+</body>
+</html>
